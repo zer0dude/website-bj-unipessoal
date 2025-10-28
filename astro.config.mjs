@@ -7,5 +7,13 @@ export default defineConfig({
   output: 'static',
   build: {
     assets: '_astro'
+  },
+  i18n: {
+    defaultLocale: 'de',
+    locales: ['de', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false
+    }
   }
 });

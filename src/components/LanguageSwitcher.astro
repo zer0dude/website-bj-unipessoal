@@ -1,0 +1,84 @@
+---
+import { getCurrentLocale, getAlternateLocale, getLocalizedPath } from '../i18n/translations';
+import { getLanguageSwitchUrl, LANGUAGE_NAMES } from '../i18n/ui';
+
+const currentLocale = getCurrentLocale(Astro.url);
+const alternateLocale = getAlternateLocale(currentLocale);
+const switchUrl = getLanguageSwitchUrl(Astro.url, alternateLocale);
+---
+
+<div class="language-switcher">
+  <span class="current-language" aria-label={`Current language: ${LANGUAGE_NAMES[currentLocale].native}`}>
+    {currentLocale.toUpperCase()}
+  </span>
+  <span class="separator">|</span>
+  <a 
+    href={switchUrl} 
+    class="switch-language"
+    aria-label={`Switch to ${LANGUAGE_NAMES[alternateLocale].native}`}
+    title={`Switch to ${LANGUAGE_NAMES[alternateLocale].native}`}
+  >
+    {alternateLocale.toUpperCase()}
+  </a>
+</div>
+
+<style>
+  .language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+  }
+
+  .current-language {
+    color: #333;
+    font-weight: 600;
+  }
+
+  .separator {
+    color: #ccc;
+  }
+
+  .switch-language {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    cursor: pointer;
+  }
+
+  .switch-language:hover {
+    color: #333;
+    text-decoration: underline;
+  }
+
+  .switch-language:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .language-switcher {
+      color: #aaa;
+    }
+    
+    .current-language {
+      color: #fff;
+    }
+    
+    .separator {
+      color: #666;
+    }
+    
+    .switch-language {
+      color: #aaa;
+    }
+    
+    .switch-language:hover {
+      color: #fff;
+    }
+  }
+</style>

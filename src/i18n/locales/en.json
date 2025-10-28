@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "Brian Jin - Portfolio",
+    "description": "Professional portfolio website"
+  },
+  "nav": {
+    "home": "Home",
+    "software": "Software Development",
+    "devops": "DevOps & Cloud",
+    "projects": "Personal Projects"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Brian.",
+    "tagline": "I build things for the web.",
+    "description": "Experienced backend developer and cloud architect.",
+    "contact": "Contact"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "contact": "Contact"
+  }
+}

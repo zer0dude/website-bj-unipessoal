@@ -1,15 +1,15 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
+import { getCurrentLocale, type Locale } from "../i18n/translations";
+
+// Set locale for German version (root pages)
+const locale: Locale = 'de';
 ---
 
-
-<!DOCTYPE html>
-<html
->
-  <Header title="Brian Jin" />
-  <body>
-    <div class="content">
+<Layout title="Brian Jin - Portfolio" locale={locale}>
+  <div class="content">
       <Sidebar selectedItem="home" />
       <nav class="main">
         <div class="container">
@@ -85,6 +85,6 @@ import Sidebar from "../components/Sidebar.astro";
       </nav>
     </div>
 
-    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-  </body>
-</html>
+  </div>
+  <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</Layout>
