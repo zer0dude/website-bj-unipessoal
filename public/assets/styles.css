@@ -348,18 +348,12 @@ ul {
   border-color: #353535;
 }
 
-/* Enhanced Navigation States */
-.nav-link-container:hover:not(.w--current) {
+/* Navigation Hover States */
+.nav-link-container:hover {
   color: #fff;
   background-color: rgba(43, 43, 43, 0.5);
   border-color: rgba(53, 53, 53, 0.5);
   transition: all 0.2s ease;
-}
-
-.nav-link-container.w--current-parent {
-  color: #e0e0e0;
-  background-color: rgba(43, 43, 43, 0.3);
-  border-color: rgba(53, 53, 53, 0.3);
 }
 
 /* Navigation Sub-items */
@@ -378,13 +372,6 @@ ul {
 .nav-link-sub:hover {
   opacity: 1;
   background-color: rgba(43, 43, 43, 0.3);
-}
-
-.nav-link-sub.w--current {
-  color: #fff;
-  background-color: #2b2b2b;
-  border-color: #353535;
-  opacity: 1;
 }
 
 .language-switcher-container {
