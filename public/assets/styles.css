@@ -751,6 +751,37 @@ ul {
     display: none;
   }
 
+  /* Enhanced specificity for sidebar mobile navigation */
+  .sidebar.w-nav[data-collapse='medium'] .w-nav-menu.is-visible {
+    display: block !important;
+    position: fixed !important;
+    top: 80px; /* Adjusted for sidebar header height */
+    left: 0;
+    right: 0;
+    background: #1c1c1c !important; /* Match sidebar dark theme */
+    border: 1px solid #353535;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 250ms ease;
+    will-change: transform, opacity;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  .sidebar.w-nav[data-collapse='medium'] .w-nav-menu.is-visible.is-open {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Ensure hamburger button is visible and properly positioned */
+  .sidebar.w-nav[data-collapse='medium'] .w-nav-button {
+    display: block !important;
+    position: relative;
+    z-index: 1002;
+  }
+
+  /* Fallback for original Webflow classes */
   .w-nav[data-collapse='medium'] .w-nav-menu.is-visible {
     display: block;
     position: fixed;

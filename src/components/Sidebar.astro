@@ -146,17 +146,49 @@ const currentLocale = getCurrentLocale(Astro.url);
     </div>
   </div>
 
-  <script>
-    import { setupNav } from '../scripts/navigation.js';
-    
-    let cleanup;
-    document.addEventListener('astro:page-load', () => {
-      if (cleanup) cleanup();
-      cleanup = setupNav();
-    });
+  <script is:inline>
+    // Hamburger menu navigation
+    function setupNav() {
+      const navButton = document.querySelector('.navbar-icon-button');
+      const navMenu = document.querySelector('.w-nav-menu');
+      
+      if (!navButton || !navMenu) return;
 
-    document.addEventListener('astro:before-swap', () => {
-      if (cleanup) cleanup();
-    });
+      const toggleNav = () => {
+        const isOpen = navMenu.classList.contains('is-open');
+        
+        navMenu.classList.toggle('is-visible', !isOpen);
+        setTimeout(() => {
+          navMenu.classList.toggle('is-open', !isOpen);
+        }, isOpen ? 300 : 10);
+      };
+
+      // Add click event listener
+      navButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleNav();
+      });
+      
+      // Add touch event for mobile
+      navButton.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        toggleNav();
+      });
+    }
+
+    // Execute setupNav when DOM is ready
+    function initializeNav() {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupNav);
+      } else {
+        setupNav();
+      }
+    }
+
+    // Handle Astro page navigation
+    document.addEventListener('astro:page-load', setupNav);
+    
+    // Initialize on first load
+    initializeNav();
   </script>
 </aside>
