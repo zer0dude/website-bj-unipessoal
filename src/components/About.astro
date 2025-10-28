@@ -1,0 +1,96 @@
+---
+import { getCurrentLocale, getTranslation } from '../i18n/translations';
+
+const locale = getCurrentLocale(Astro.url);
+const t = (key: string) => getTranslation(locale, key);
+---
+
+<section id="about" class="about-section">
+  <div class="content-container">
+    <h3>{t('about.title')}</h3>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <p class="about-description">
+          {t('about.intro')}
+        </p>
+        <p class="about-description">
+          {t('about.background')}
+        </p>
+        <p class="about-description">
+          {t('about.company')}
+        </p>
+      </div>
+      
+      <div class="skills-section">
+        <div class="mini-label-white">{t('about.skills.title')}</div>
+        <div class="chips-container">
+          <div class="single-chip">JavaScript</div>
+          <div class="single-chip">TypeScript</div>
+          <div class="single-chip">Python</div>
+          <div class="single-chip">React</div>
+          <div class="single-chip">Node.js</div>
+          <div class="single-chip">Docker</div>
+          <div class="single-chip">Kubernetes</div>
+          <div class="single-chip">AWS</div>
+          <div class="single-chip">PostgreSQL</div>
+          <div class="single-chip">MongoDB</div>
+          <div class="single-chip">Machine Learning</div>
+          <div class="single-chip">AI/ML</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 68px 0;
+    border-top: 1px solid #353535;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  
+  .about-text {
+    max-width: 580px;
+  }
+  
+  .about-description {
+    color: #a8a8a8;
+    margin-bottom: 24px;
+    line-height: 26px;
+  }
+  
+  .skills-section {
+    flex-direction: column;
+    display: flex;
+  }
+  
+  .chips-container {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 16px;
+    display: flex;
+  }
+  
+  .single-chip {
+    color: #fff;
+    background-color: #353535;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: IBM Plex Mono, sans-serif;
+    font-size: 14px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .about-content {
+      gap: 32px;
+    }
+  }
+</style>

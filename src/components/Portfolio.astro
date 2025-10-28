@@ -1,0 +1,71 @@
+---
+import PortfolioCard from './PortfolioCard.astro';
+import { getCurrentLocale, getTranslation } from '../i18n/translations';
+
+const locale = getCurrentLocale(Astro.url);
+const t = (key: string) => getTranslation(locale, key);
+
+// Portfolio projects data (placeholder content)
+const portfolioProjects = [
+  {
+    title: t('portfolio.project1.title'),
+    description: t('portfolio.project1.description'),
+    technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Stripe'],
+    projectUrl: locale === 'en' ? '/en/portfolio/project-1' : '/portfolio/project-1',
+    imageIcon: '/assets/browser.svg'
+  },
+  {
+    title: t('portfolio.project2.title'),
+    description: t('portfolio.project2.description'),
+    technologies: ['Vue.js', 'Python', 'FastAPI', 'PostgreSQL', 'Docker'],
+    projectUrl: locale === 'en' ? '/en/portfolio/project-2' : '/portfolio/project-2',
+    imageIcon: '/assets/database.svg'
+  },
+  {
+    title: t('portfolio.project3.title'),
+    description: t('portfolio.project3.description'),
+    technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux'],
+    projectUrl: locale === 'en' ? '/en/portfolio/project-3' : '/portfolio/project-3',
+    imageIcon: '/assets/code.svg'
+  }
+];
+---
+
+<section id="portfolio" class="portfolio-section">
+  <div class="content-container">
+    <h3>{t('portfolio.title')}</h3>
+    <p class="section-description">{t('portfolio.description')}</p>
+    
+    <div class="projects-section">
+      {portfolioProjects.map(project => (
+        <PortfolioCard
+          title={project.title}
+          description={project.description}
+          technologies={project.technologies}
+          projectUrl={project.projectUrl}
+          imageIcon={project.imageIcon}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-section {
+    padding: 68px 0;
+  }
+  
+  .section-description {
+    color: #a8a8a8;
+    margin-bottom: 48px;
+    max-width: 580px;
+    line-height: 26px;
+  }
+  
+  .projects-section {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+    flex-direction: column;
+    display: flex;
+  }
+</style>

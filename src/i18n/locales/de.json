@@ -5,19 +5,97 @@
   },
   "nav": {
     "home": "Home",
-    "software": "Software Development",
-    "devops": "DevOps & Cloud",
-    "projects": "Personal Projects"
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
   },
   "hero": {
     "greeting": "Hi, I'm Brian.",
     "tagline": "I build things for the web.",
-    "description": "Experienced backend developer and cloud architect.",
-    "contact": "Contact"
+    "description": "Experienced Applied AI Engineer and cloud architect. A proactive team member dedicated to continuous learning, problem-solving, and helping teams achieve faster results.",
+    "cta": "Get in Touch"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "A selection of projects I've worked on, showcasing different technologies and approaches to solving complex problems.",
+    "project1": {
+      "title": "E-commerce Platform",
+      "description": "Full-stack e-commerce solution with modern payment processing",
+      "fullDescription": "A comprehensive e-commerce platform built for scalability and performance, featuring real-time inventory management and advanced analytics.",
+      "overview": "This project involved building a complete e-commerce ecosystem from the ground up, including user authentication, product management, shopping cart functionality, and payment processing integration.",
+      "challenge1": "Implementing real-time inventory synchronization across multiple sales channels",
+      "challenge2": "Building a scalable architecture to handle high traffic during peak seasons",
+      "challenge3": "Integrating multiple payment gateways with fraud detection",
+      "solution1": "Developed a distributed caching system using Redis for inventory management",
+      "solution2": "Implemented microservices architecture with Docker and Kubernetes",
+      "solution3": "Created a unified payment gateway abstraction layer with ML-based fraud detection"
+    },
+    "project2": {
+      "title": "SaaS Dashboard",
+      "description": "Analytics and reporting dashboard for enterprise clients",
+      "fullDescription": "A powerful SaaS dashboard providing real-time analytics, custom reporting, and data visualization for enterprise customers.",
+      "overview": "Built a comprehensive dashboard solution that processes millions of data points daily, providing actionable insights through interactive visualizations and automated reporting.",
+      "challenge1": "Processing and visualizing large datasets in real-time",
+      "challenge2": "Creating flexible, customizable reporting features",
+      "challenge3": "Ensuring enterprise-grade security and compliance",
+      "solution1": "Implemented streaming data processing with Apache Kafka and TimescaleDB",
+      "solution2": "Built a drag-and-drop report builder with Vue.js and D3.js",
+      "solution3": "Achieved SOC 2 compliance with comprehensive audit logging and encryption"
+    },
+    "project3": {
+      "title": "Mobile App",
+      "description": "Cross-platform mobile application with offline capabilities",
+      "fullDescription": "A feature-rich mobile application built with React Native, offering seamless offline functionality and real-time synchronization.",
+      "overview": "Developed a cross-platform mobile app that works seamlessly online and offline, with intelligent data synchronization and push notifications.",
+      "challenge1": "Implementing robust offline functionality with data synchronization",
+      "challenge2": "Optimizing performance for different device specifications",
+      "challenge3": "Creating a consistent user experience across platforms",
+      "solution1": "Built offline-first architecture with Redux Persist and background sync",
+      "solution2": "Implemented lazy loading and memory optimization techniques",
+      "solution3": "Used React Native with platform-specific customizations when needed"
+    },
+    "overview": "Project Overview",
+    "challenges": "Key Challenges",
+    "solutions": "Solutions Implemented",
+    "technologies": "Technologies Used"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm Brian Jin, an Applied AI Engineer passionate about building scalable, intelligent systems that solve real-world problems.",
+    "background": "With extensive experience in full-stack development, cloud architecture, and machine learning, I specialize in creating robust solutions that bridge the gap between cutting-edge AI technology and practical business applications.",
+    "company": "Through Brian Jin Unipessoal, I provide consulting and development services, helping companies leverage AI and modern web technologies to accelerate their digital transformation.",
+    "skills": {
+      "title": "Key Skills & Technologies"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Ready to discuss your next project? I'd love to hear about your ideas and explore how we can work together.",
+    "email": {
+      "label": "Email"
+    },
+    "company": {
+      "label": "Company"
+    },
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project..."
+      },
+      "submit": "Send Message"
+    }
   },
   "common": {
     "loading": "Loading...",
     "error": "Error",
-    "contact": "Contact"
+    "back": "Back"
   }
 }

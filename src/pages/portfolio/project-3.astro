@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import { getCurrentLocale, getTranslation, type Locale } from "../../i18n/translations";
+
+// Set locale for German version (root pages)
+const locale: Locale = 'de';
+const t = (key: string) => getTranslation(locale, key);
+---
+
+<Layout title={`${t('portfolio.project3.title')} - Brian Jin`} locale={locale}>
+  <div class="content">
+    <Sidebar selectedItem="portfolio" />
+    <nav class="main">
+      <div class="container">
+        <div class="back-nav-container">
+          <a href="/#portfolio" class="back-nav-button w-inline-block">
+            <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+            <div>{t('common.back')}</div>
+          </a>
+        </div>
+        
+        <div class="content-container">
+          <h1>{t('portfolio.project3.title')}</h1>
+          <p class="project-desc">{t('portfolio.project3.fullDescription')}</p>
+          
+          <div class="project-details">
+            <div class="project-section">
+              <div class="mini-label-white">{t('portfolio.overview')}</div>
+              <p class="project-desc">{t('portfolio.project3.overview')}</p>
+            </div>
+            
+            <div class="project-section">
+              <div class="mini-label-white">{t('portfolio.challenges')}</div>
+              <ul class="project-list">
+                <li class="project-desc">{t('portfolio.project3.challenge1')}</li>
+                <li class="project-desc">{t('portfolio.project3.challenge2')}</li>
+                <li class="project-desc">{t('portfolio.project3.challenge3')}</li>
+              </ul>
+            </div>
+            
+            <div class="project-section">
+              <div class="mini-label-white">{t('portfolio.solutions')}</div>
+              <ul class="project-list">
+                <li class="project-desc">{t('portfolio.project3.solution1')}</li>
+                <li class="project-desc">{t('portfolio.project3.solution2')}</li>
+                <li class="project-desc">{t('portfolio.project3.solution3')}</li>
+              </ul>
+            </div>
+            
+            <div class="project-section">
+              <div class="mini-label-white">{t('portfolio.technologies')}</div>
+              <div class="chips-container">
+                <div class="single-chip">React Native</div>
+                <div class="single-chip">TypeScript</div>
+                <div class="single-chip">Firebase</div>
+                <div class="single-chip">Redux</div>
+                <div class="single-chip">Expo</div>
+                <div class="single-chip">Node.js</div>
+                <div class="single-chip">GraphQL</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</Layout>
+
+<style>
+  .project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-top: 32px;
+  }
+  
+  .project-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .project-list {
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .chips-container {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    display: flex;
+  }
+  
+  .single-chip {
+    color: #fff;
+    background-color: #353535;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: IBM Plex Mono, sans-serif;
+    font-size: 14px;
+  }
+</style>

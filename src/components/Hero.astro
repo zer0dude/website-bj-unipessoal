@@ -1,0 +1,33 @@
+---
+import { getCurrentLocale, getTranslation } from '../i18n/translations';
+
+const locale = getCurrentLocale(Astro.url);
+const t = (key: string) => getTranslation(locale, key);
+---
+
+<section id="hero" class="hero-section">
+  <div class="fold-content-container">
+    <div class="fold-content">
+      <h1>{t('hero.greeting')}<br />{t('hero.tagline')}</h1>
+      <p class="lead">
+        {t('hero.description')}
+      </p>
+    </div>
+    <a href="#contact" class="button w-button">{t('hero.cta')}</a>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding-bottom: 48px;
+  }
+  
+  .fold-content {
+    margin-bottom: 48px;
+  }
+  
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

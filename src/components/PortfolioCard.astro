@@ -1,0 +1,46 @@
+---
+import { getCurrentLocale } from '../i18n/translations';
+
+interface Props {
+  title: string;
+  description: string;
+  technologies: string[];
+  projectUrl: string;
+  imageIcon: string;
+}
+
+const { title, description, technologies, projectUrl, imageIcon } = Astro.props;
+const locale = getCurrentLocale(Astro.url);
+---
+
+<a href={projectUrl} class="projects-container portfolio-card">
+  <div class="single-projects-category">
+    <div class="projects-category-image-container">
+      <img src={imageIcon} loading="lazy" alt="" class="projects-category-image" />
+    </div>
+  </div>
+  <div class="single-projects-content">
+    <h4>{title}</h4>
+    <p class="project-desc">{description}</p>
+    <div class="tech-tools-container">
+      <div class="mini-label-white gray-color">Technologies &amp; tools</div>
+      <div class="chips-container chips-container-small-width">
+        {technologies.map(tech => (
+          <div class="single-chip small-chip">{tech}</div>
+        ))}
+      </div>
+    </div>
+  </div>
+</a>
+
+<style>
+  .portfolio-card {
+    margin-bottom: 32px;
+  }
+  
+  .project-desc {
+    color: #a8a8a8;
+    margin-bottom: 16px;
+    line-height: 24px;
+  }
+</style>

@@ -37,7 +37,7 @@ const navUrls = getNavUrls(Astro.url);
 
     <nav role="navigation" class="w-nav-menu">
       <a
-        href={navUrls.home}
+        href={currentLocale === 'en' ? '/en/#hero' : '/#hero'}
         class={`nav-link-container w-inline-block ${
           selectedItem === 'home' ? 'w--current' : ''
         }`}
@@ -50,41 +50,11 @@ const navUrls = getNavUrls(Astro.url);
         />
         <div>Home</div>
       </a>
+      
       <a
-        href={navUrls.software}
+        href={currentLocale === 'en' ? '/en/#portfolio' : '/#portfolio'}
         class={`nav-link-container w-inline-block ${
-          selectedItem === 'software-development' ? 'w--current' : ''
-        }`}
-        aria-current={
-          selectedItem === 'software-development' ? 'page' : undefined
-        }
-      >
-        <img
-          src="/assets/code.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Software development</div>
-      </a>
-      <a
-        href={navUrls.devops}
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'devops' ? 'w--current' : ''
-        }`}
-      >
-        <img
-          src="/assets/dns.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>DevOps</div>
-      </a>
-      <a
-        href={navUrls.projects}
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'personal-projects' ? 'w--current' : ''
+          selectedItem === 'portfolio' ? 'w--current' : ''
         }`}
       >
         <img
@@ -93,7 +63,77 @@ const navUrls = getNavUrls(Astro.url);
           alt=""
           class="nav-link-image"
         />
-        <div>Personal projects</div>
+        <div>Portfolio</div>
+      </a>
+      
+      <!-- Portfolio sub-items (indented) -->
+      <a
+        href={currentLocale === 'en' ? '/en/portfolio/project-1' : '/portfolio/project-1'}
+        class="nav-link-container nav-link-sub w-inline-block"
+      >
+        <img
+          src="/assets/code.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>E-commerce Platform</div>
+      </a>
+      
+      <a
+        href={currentLocale === 'en' ? '/en/portfolio/project-2' : '/portfolio/project-2'}
+        class="nav-link-container nav-link-sub w-inline-block"
+      >
+        <img
+          src="/assets/database.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>SaaS Dashboard</div>
+      </a>
+      
+      <a
+        href={currentLocale === 'en' ? '/en/portfolio/project-3' : '/portfolio/project-3'}
+        class="nav-link-container nav-link-sub w-inline-block"
+      >
+        <img
+          src="/assets/browser.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Mobile App</div>
+      </a>
+      
+      <a
+        href={currentLocale === 'en' ? '/en/#about' : '/#about'}
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'about' ? 'w--current' : ''
+        }`}
+      >
+        <img
+          src="/assets/home.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>About</div>
+      </a>
+      
+      <a
+        href={currentLocale === 'en' ? '/en/#contact' : '/#contact'}
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'contact' ? 'w--current' : ''
+        }`}
+      >
+        <img
+          src="/assets/dns.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Contact</div>
       </a>
     </nav>
 
@@ -132,3 +172,26 @@ const navUrls = getNavUrls(Astro.url);
     });
   </script>
 </aside>
+
+<style>
+  .nav-link-sub {
+    padding-left: 32px !important;
+    opacity: 0.8;
+    font-size: 13px;
+  }
+  
+  .nav-link-sub .nav-link-image {
+    width: 20px;
+    opacity: 0.6;
+  }
+  
+  .nav-link-sub:hover {
+    opacity: 1;
+  }
+  
+  .language-switcher-container {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid #353535;
+  }
+</style>
