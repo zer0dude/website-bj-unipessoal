@@ -1,13 +1,9 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import { getCurrentLocale, type Locale } from '../i18n/translations';
-import { getNavUrls } from '../utils/urls';
-
-const { selectedItem } = Astro.props;
 
 // Detect current locale and get appropriate navigation URLs
 const currentLocale = getCurrentLocale(Astro.url);
-const navUrls = getNavUrls(Astro.url);
 ---
 
 <aside
@@ -38,9 +34,7 @@ const navUrls = getNavUrls(Astro.url);
     <nav role="navigation" class="w-nav-menu">
       <a
         href={currentLocale === 'en' ? '/en/#hero' : '/#hero'}
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'home' ? 'w--current' : ''
-        }`}
+        class="nav-link-container w-inline-block"
       >
         <img
           src="/assets/home.svg"
@@ -53,9 +47,7 @@ const navUrls = getNavUrls(Astro.url);
       
       <a
         href={currentLocale === 'en' ? '/en/#portfolio' : '/#portfolio'}
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'portfolio' ? 'w--current' : ''
-        }`}
+        class="nav-link-container w-inline-block"
       >
         <img
           src="/assets/favorite.svg"
@@ -108,9 +100,7 @@ const navUrls = getNavUrls(Astro.url);
       
       <a
         href={currentLocale === 'en' ? '/en/#about' : '/#about'}
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'about' ? 'w--current' : ''
-        }`}
+        class="nav-link-container w-inline-block"
       >
         <img
           src="/assets/home.svg"
@@ -123,9 +113,7 @@ const navUrls = getNavUrls(Astro.url);
       
       <a
         href={currentLocale === 'en' ? '/en/#contact' : '/#contact'}
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'contact' ? 'w--current' : ''
-        }`}
+        class="nav-link-container w-inline-block"
       >
         <img
           src="/assets/dns.svg"
@@ -159,7 +147,7 @@ const navUrls = getNavUrls(Astro.url);
   </div>
 
   <script>
-    import { setupNav } from '../scripts/nav.js';
+    import { setupNav } from '../scripts/navigation.js';
     
     let cleanup;
     document.addEventListener('astro:page-load', () => {
