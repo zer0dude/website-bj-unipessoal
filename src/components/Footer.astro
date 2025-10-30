@@ -1,0 +1,36 @@
+---
+import { getCurrentLocale, getTranslation } from '../i18n/translations';
+
+const currentLocale = getCurrentLocale(Astro.url);
+const t = (key: string) => getTranslation(currentLocale, key);
+
+// Generate localized URLs for legal pages using German slugs
+const getLocalizedUrl = (germanSlug: string) => {
+  if (currentLocale === 'en') {
+    return `/en${germanSlug}`;
+  }
+  return germanSlug;
+};
+---
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-legal">
+      <span class="footer-legal-label">{t('footer.legal_links')}:</span>
+      <div class="footer-links">
+        <a href={getLocalizedUrl('/impressum')} class="footer-link">
+          {currentLocale === 'en' ? t('legal.imprint.nav_title') : t('legal.impressum.nav_title')}
+        </a>
+        <a href={getLocalizedUrl('/datenschutz')} class="footer-link">
+          {currentLocale === 'en' ? t('legal.privacy.nav_title') : t('legal.datenschutz.nav_title')}
+        </a>
+        <a href={getLocalizedUrl('/agb')} class="footer-link">
+          {currentLocale === 'en' ? t('legal.terms.nav_title') : t('legal.agb.nav_title')}
+        </a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <span>{t('footer.copyright')}</span>
+    </div>
+  </div>
+</footer>

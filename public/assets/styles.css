@@ -19,6 +19,18 @@
 /* =============================================== */
 /* 2. CSS RESET & BASE                             */
 /* =============================================== */
+:root {
+  --accent: 136, 58, 234;
+  --accent-light: 224, 204, 250;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -158,6 +170,7 @@ img {
 /* 4. THEME FOUNDATION                             */
 /* =============================================== */
 h1,
+h2,
 h3,
 h4 {
   margin-bottom: 10px;
@@ -174,22 +187,31 @@ h1 {
   line-height: 72px;
 }
 
+h2 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
 h3 {
   color: #fff;
   margin-top: 0;
   margin-bottom: 12px;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 42px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
 }
 
 h4 {
   color: #fff;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 22px;
 }
 
 p {
@@ -1020,7 +1042,165 @@ p a:visited {
 }
 
 /* =============================================== */
-/* 10. UTILITY CLASSES                             */
+/* 10. FOOTER COMPONENT                            */
+/* =============================================== */
+
+/* Site Footer */
+.site-footer {
+  background-color: #1c1c1c;
+  border-top: 1px solid #353535;
+  padding: 32px 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  gap: 32px;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-legal-label {
+  color: #a8a8a8;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.footer-link:hover {
+  color: #4A9EFF;
+  background-color: rgba(74, 158, 255, 0.1);
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  color: #a8a8a8;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* Legal Page Content Styles */
+.legal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 680px;
+}
+
+.legal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.legal-section h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  border-bottom: 1px solid #353535;
+  padding-bottom: 8px;
+}
+
+.legal-section p {
+  color: #a8a8a8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Footer Responsive Design */
+@media screen and (max-width: 991px) {
+  .footer-content {
+    padding: 0 28px;
+    gap: 24px;
+  }
+  
+  .footer-legal {
+    gap: 12px;
+  }
+  
+  .footer-links {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site-footer {
+    padding: 24px 0;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px;
+    gap: 20px;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .footer-links {
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .footer-link {
+    font-size: 13px;
+  }
+  
+  .footer-copyright {
+    font-size: 11px;
+    order: 1;
+  }
+  
+  .footer-legal {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+/* =============================================== */
+/* 11. UTILITY CLASSES                             */
 /* =============================================== */
 
 /* Dark mode support for language switcher */
