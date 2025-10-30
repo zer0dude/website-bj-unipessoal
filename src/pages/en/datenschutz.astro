@@ -1,0 +1,140 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import { getTranslation, type Locale } from "../../i18n/translations";
+
+const locale: Locale = 'en';
+const t = (key: string) => getTranslation(locale, key);
+---
+
+<Layout title={`${t('legal.privacy.title')} - Brian Jin`} locale={locale}>
+  <div class="content">
+    <Sidebar />
+    <nav class="main">
+      <div class="container">
+        <div class="back-nav-container">
+          <a href="/en/" class="back-nav-button w-inline-block">
+            <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+            <div>{t('common.back')}</div>
+          </a>
+        </div>
+        
+        <div class="content-container">
+          <h1>{t('legal.privacy.title')}</h1>
+          
+          <div class="legal-content">
+            <div class="legal-section">
+              <h2>{t('legal.privacy.content.section1_title')}</h2>
+              
+              <h3>{t('legal.privacy.content.section1_general_title')}</h3>
+              <p>{t('legal.privacy.content.section1_general_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section1_data_collection_title')}</h3>
+              
+              <h4>{t('legal.privacy.content.section1_responsible_title')}</h4>
+              <p>{t('legal.privacy.content.section1_responsible_content')}</p>
+              
+              <h4>{t('legal.privacy.content.section1_how_title')}</h4>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section1_how_content')}</p>
+              
+              <h4>{t('legal.privacy.content.section1_purpose_title')}</h4>
+              <p>{t('legal.privacy.content.section1_purpose_content')}</p>
+              
+              <h4>{t('legal.privacy.content.section1_rights_title')}</h4>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section1_rights_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section1_analytics_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section1_analytics_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.privacy.content.section2_title')}</h2>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section2_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.privacy.content.section3_title')}</h2>
+              
+              <h3>{t('legal.privacy.content.section3_privacy_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section3_privacy_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_responsible_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section3_responsible_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_storage_title')}</h3>
+              <p>{t('legal.privacy.content.section3_storage_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_legal_basis_title')}</h3>
+              <p>{t('legal.privacy.content.section3_legal_basis_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_third_countries_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section3_third_countries_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_recipients_title')}</h3>
+              <p>{t('legal.privacy.content.section3_recipients_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_revocation_title')}</h3>
+              <p>{t('legal.privacy.content.section3_revocation_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_objection_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section3_objection_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_complaint_title')}</h3>
+              <p>{t('legal.privacy.content.section3_complaint_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_portability_title')}</h3>
+              <p>{t('legal.privacy.content.section3_portability_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_information_title')}</h3>
+              <p>{t('legal.privacy.content.section3_information_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_restriction_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section3_restriction_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section3_ssl_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section3_ssl_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.privacy.content.section4_title')}</h2>
+              
+              <h3>{t('legal.privacy.content.section4_cookies_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section4_cookies_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section4_contact_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section4_contact_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section4_email_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section4_email_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.privacy.content.section5_title')}</h2>
+              
+              <h3>{t('legal.privacy.content.section5_linkedin_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section5_linkedin_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.privacy.content.section6_title')}</h2>
+              
+              <h3>{t('legal.privacy.content.section6_analytics_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section6_analytics_content')}</p>
+              
+              <h3>{t('legal.privacy.content.section6_browser_plugin_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section6_browser_plugin_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.privacy.content.section7_title')}</h2>
+              
+              <h3>{t('legal.privacy.content.section7_youtube_title')}</h3>
+              <p style="white-space: pre-line;">{t('legal.privacy.content.section7_youtube_content')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</Layout>

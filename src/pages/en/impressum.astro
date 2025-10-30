@@ -1,0 +1,57 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import { getTranslation, type Locale } from "../../i18n/translations";
+
+const locale: Locale = 'en';
+const t = (key: string) => getTranslation(locale, key);
+---
+
+<Layout title={`${t('legal.imprint.title')} - Brian Jin`} locale={locale}>
+  <div class="content">
+    <Sidebar />
+    <nav class="main">
+      <div class="container">
+        <div class="back-nav-container">
+          <a href="/en/" class="back-nav-button w-inline-block">
+            <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+            <div>{t('common.back')}</div>
+          </a>
+        </div>
+        
+        <div class="content-container">
+          <h1>{t('legal.imprint.title')}</h1>
+          
+          <div class="legal-content">
+            <div class="legal-section">
+              <h3>Information according to § 5 TMG</h3>
+              <p>{t('legal.imprint.content.name')}</p>
+              <p style="white-space: pre-line;">{t('legal.imprint.content.address')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h3>Contact</h3>
+              <p style="white-space: pre-line;">{t('legal.imprint.content.contact')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h3>Authorized Representative</h3>
+              <p style="white-space: pre-line;">{t('legal.imprint.content.representative')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h3>VAT Identification Number</h3>
+              <p style="white-space: pre-line;">{t('legal.imprint.content.vat_number')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h3>Liability Notice</h3>
+              <p>{t('legal.imprint.content.disclaimer')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</Layout>

@@ -1,0 +1,125 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import { getTranslation, type Locale } from "../../i18n/translations";
+
+const locale: Locale = 'en';
+const t = (key: string) => getTranslation(locale, key);
+---
+
+<Layout title={`${t('legal.terms.title')} - Brian Jin`} locale={locale}>
+  <div class="content">
+    <Sidebar />
+    <nav class="main">
+      <div class="container">
+        <div class="back-nav-container">
+          <a href="/en/" class="back-nav-button w-inline-block">
+            <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+            <div>{t('common.back')}</div>
+          </a>
+        </div>
+        
+        <div class="content-container">
+          <h1>{t('legal.terms.title')}</h1>
+          <p class="legal-subtitle">{t('legal.terms.subtitle')}</p>
+          
+          <div class="legal-content">
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section1_title')}</h2>
+              <p>{t('legal.terms.content.section1_para1')}</p>
+              <p>{t('legal.terms.content.section1_para2')}</p>
+              <p>{t('legal.terms.content.section1_para3')}</p>
+              <p>{t('legal.terms.content.section1_para4')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section2_title')}</h2>
+              <p>{t('legal.terms.content.section2_para1')}</p>
+              <p>{t('legal.terms.content.section2_para2')}</p>
+              <p>{t('legal.terms.content.section2_para3')}</p>
+              <p>{t('legal.terms.content.section2_para4')}</p>
+              <p>{t('legal.terms.content.section2_para5')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section3_title')}</h2>
+              <p>{t('legal.terms.content.section3_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section4_title')}</h2>
+              <p>{t('legal.terms.content.section4_para1')}</p>
+              <p>{t('legal.terms.content.section4_para2')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section5_title')}</h2>
+              <p>{t('legal.terms.content.section5_para1')}</p>
+              <p>{t('legal.terms.content.section5_para2')}</p>
+              <p>{t('legal.terms.content.section5_para3')}</p>
+              <p>{t('legal.terms.content.section5_para4')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section6_title')}</h2>
+              <p>{t('legal.terms.content.section6_para1')}</p>
+              <p>{t('legal.terms.content.section6_para2')}</p>
+              <p>{t('legal.terms.content.section6_para3')}</p>
+              <p>{t('legal.terms.content.section6_para4')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section7_title')}</h2>
+              <p>{t('legal.terms.content.section7_para1')}</p>
+              <p>{t('legal.terms.content.section7_para2')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section8_title')}</h2>
+              <p>{t('legal.terms.content.section8_para1')}</p>
+              <p>{t('legal.terms.content.section8_para2')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section9_title')}</h2>
+              <p>{t('legal.terms.content.section9_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section10_title')}</h2>
+              <p>{t('legal.terms.content.section10_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section11_title')}</h2>
+              <p>{t('legal.terms.content.section11_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section12_title')}</h2>
+              <p>{t('legal.terms.content.section12_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section13_title')}</h2>
+              <p>{t('legal.terms.content.section13_content')}</p>
+            </div>
+            
+            <div class="legal-section">
+              <h2>{t('legal.terms.content.section14_title')}</h2>
+              <p>{t('legal.terms.content.section14_para1')}</p>
+              <p>{t('legal.terms.content.section14_para2')}</p>
+              <p>{t('legal.terms.content.section14_para3')}</p>
+              <p>{t('legal.terms.content.section14_para4')}</p>
+            </div>
+            
+            <div class="legal-date">
+              <p><strong>{t('legal.terms.content.last_updated')}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</Layout>
