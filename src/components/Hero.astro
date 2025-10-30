@@ -10,7 +10,7 @@ const t = (key: string) => getTranslation(locale, key);
     <div class="fold-content">
       <h1>{t('hero.greeting')}<br />{t('hero.tagline')}</h1>
       <p class="lead">
-        {t('hero.description')}
+        {t('hero.description_part1')} <a href="https://just-forward.com" target="_blank" rel="noopener noreferrer">{t('hero.company_name')}</a> {t('hero.description_part2')}
       </p>
     </div>
     <a href="#contact" class="button w-button">{t('hero.cta')}</a>

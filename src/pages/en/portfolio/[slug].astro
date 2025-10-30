@@ -1,0 +1,101 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Sidebar from "../../../components/Sidebar.astro";
+import { getCurrentLocale, getTranslation, type Locale } from "../../../i18n/translations";
+
+// Export static paths for build time generation
+export async function getStaticPaths() {
+  return [
+    { params: { slug: 'multi-agent-ticketing' } },
+    { params: { slug: 'customer-churn-prediction' } },
+    { params: { slug: 'computer-vision-identifier' } }
+  ];
+}
+
+// Set locale for English version
+const locale: Locale = 'en';
+const t = (key: string) => getTranslation(locale, key);
+
+// Get the project slug from the URL
+const { slug } = Astro.params;
+
+// Define project mapping
+const projectMap = {
+  'multi-agent-ticketing': {
+    key: 'project1',
+    technologies: ['Python', 'FastAPI', 'LangChain', 'OpenAI API', 'PostgreSQL', 'Redis', 'Docker']
+  },
+  'customer-churn-prediction': {
+    key: 'project2', 
+    technologies: ['Python', 'Scikit-learn', 'Pandas', 'XGBoost', 'Apache Kafka', 'MLflow', 'AWS SageMaker']
+  },
+  'computer-vision-identifier': {
+    key: 'project3',
+    technologies: ['Python', 'PyTorch', 'OpenCV', 'YOLO', 'TensorFlow', 'CUDA', 'Docker']
+  }
+};
+
+// Get project data or return 404
+const project = projectMap[slug];
+if (!project) {
+  return Astro.redirect('/en/404');
+}
+
+const projectKey = `portfolio.${project.key}`;
+---
+
+<Layout title={`${t(`${projectKey}.title`)} - Brian Jin`} locale={locale}>
+  <div class="content">
+    <Sidebar />
+    <nav class="main">
+      <div class="container">
+        <div class="back-nav-container">
+          <a href="/en/#portfolio" class="back-nav-button w-inline-block">
+            <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+            <div>{t('common.back')}</div>
+          </a>
+        </div>
+        
+        <div class="content-container">
+          <h1>{t(`${projectKey}.title`)}</h1>
+          <p class="project-desc">{t(`${projectKey}.fullDescription`)}</p>
+          
+          <div class="project-details">
+            <div class="project-section">
+              <div class="mini-label-white">{t('portfolio.overview')}</div>
+              <p class="project-desc">{t(`${projectKey}.overview`)}</p>
+            </div>
+            
+            <div class="project-section">
+              <div class="mini-label-white">{t('portfolio.challenges')}</div>
+              <ul class="project-list">
+                <li class="project-desc">{t(`${projectKey}.challenge1`)}</li>
+                <li class="project-desc">{t(`${projectKey}.challenge2`)}</li>
+                <li class="project-desc">{t(`${projectKey}.challenge3`)}</li>
+              </ul>
+            </div>
+            
+            <div class="project-section">
+              <div class="mini-label-white">{t('portfolio.solutions')}</div>
+              <ul class="project-list">
+                <li class="project-desc">{t(`${projectKey}.solution1`)}</li>
+                <li class="project-desc">{t(`${projectKey}.solution2`)}</li>
+                <li class="project-desc">{t(`${projectKey}.solution3`)}</li>
+              </ul>
+            </div>
+            
+            <div class="project-section">
+              <div class="mini-label-white">{t('portfolio.technologies')}</div>
+              <div class="chips-container">
+                {project.technologies.map(tech => (
+                  <div class="single-chip">{tech}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</Layout>

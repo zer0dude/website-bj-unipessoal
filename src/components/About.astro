@@ -12,31 +12,21 @@ const t = (key: string) => getTranslation(locale, key);
     <div class="about-content">
       <div class="about-text">
         <p class="about-description">
-          {t('about.intro')}
+          {t('about.experience')}
         </p>
         <p class="about-description">
-          {t('about.background')}
-        </p>
-        <p class="about-description">
-          {t('about.company')}
+          {t('about.motivation')}
         </p>
       </div>
       
-      <div class="skills-section">
-        <div class="mini-label-white">{t('about.skills.title')}</div>
-        <div class="chips-container">
-          <div class="single-chip">JavaScript</div>
-          <div class="single-chip">TypeScript</div>
-          <div class="single-chip">Python</div>
-          <div class="single-chip">React</div>
-          <div class="single-chip">Node.js</div>
-          <div class="single-chip">Docker</div>
-          <div class="single-chip">Kubernetes</div>
-          <div class="single-chip">AWS</div>
-          <div class="single-chip">PostgreSQL</div>
-          <div class="single-chip">MongoDB</div>
-          <div class="single-chip">Machine Learning</div>
-          <div class="single-chip">AI/ML</div>
+      <div class="social-links-section">
+        <div class="social-links-container">
+          <a href="https://www.linkedin.com/in/brian-zelun-jin/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label={t('about.social.linkedin')}>
+            <img src="/assets/linkedin.svg" alt="LinkedIn" class="social-icon" />
+          </a>
+          <a href="https://github.com/zer0dude" target="_blank" rel="noopener noreferrer" class="social-link" aria-label={t('about.social.github')}>
+            <img src="/assets/github.svg" alt="GitHub" class="social-icon" />
+          </a>
         </div>
       </div>
     </div>

@@ -14,22 +14,22 @@ const t = (key: string) => getTranslation(locale, key);
       <div class="contact-info">
         <div class="contact-item">
           <div class="mini-label-white">{t('contact.email.label')}</div>
-          <a href="mailto:brian@brianjin.eu" class="contact-link">brian@brianjin.eu</a>
-        </div>
-        
-        <div class="contact-item">
-          <div class="mini-label-white">{t('contact.company.label')}</div>
-          <div class="contact-text">Brian Jin Unipessoal</div>
+          <a href="mailto:bj@just-forward.com" class="contact-link">bj@just-forward.com</a>
         </div>
       </div>
       
-      <form class="contact-form" action="#" method="POST">
+      <form id="contact-form" class="contact-form">
+        <!-- Message Display Area -->
+        <div id="form-message" class="form-message" style="display: none;">
+          <p id="message-text"></p>
+        </div>
+        
         <div class="form-group">
-          <label for="name" class="form-label">{t('contact.form.name.label')}</label>
+          <label for="from_name" class="form-label">{t('contact.form.name.label')}</label>
           <input 
             type="text" 
-            id="name" 
-            name="name" 
+            id="from_name" 
+            name="from_name" 
             class="form-input" 
             placeholder={t('contact.form.name.placeholder')}
             required 
@@ -37,11 +37,11 @@ const t = (key: string) => getTranslation(locale, key);
         </div>
         
         <div class="form-group">
-          <label for="email" class="form-label">{t('contact.form.email.label')}</label>
+          <label for="from_email" class="form-label">{t('contact.form.email.label')}</label>
           <input 
             type="email" 
-            id="email" 
-            name="email" 
+            id="from_email" 
+            name="from_email" 
             class="form-input" 
             placeholder={t('contact.form.email.placeholder')}
             required 
@@ -60,10 +60,98 @@ const t = (key: string) => getTranslation(locale, key);
           ></textarea>
         </div>
         
-        <button type="submit" class="button form-button">
-          {t('contact.form.submit')}
+        <button type="submit" id="submit-button" class="button form-button">
+          <span id="button-text">{t('contact.form.submit')}</span>
         </button>
       </form>
     </div>
   </div>
 </section>
+
+<!-- Hidden fields for translations -->
+<div style="display: none;" id="translations" 
+     data-sending={t('contact.form.sending')}
+     data-success={t('contact.form.success')}
+     data-error={t('contact.form.error')}
+     data-submit={t('contact.form.submit')}>
+</div>
+
+<script>
+  import emailjs from '@emailjs/browser';
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get environment variables
+    const serviceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    // Initialize EmailJS
+    emailjs.init(publicKey);
+
+    // Get form elements
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+    const buttonText = document.getElementById('button-text') as HTMLSpanElement;
+    const messageDiv = document.getElementById('form-message') as HTMLDivElement;
+    const messageText = document.getElementById('message-text') as HTMLParagraphElement;
+    
+    // Get translations
+    const translations = document.getElementById('translations');
+    const sendingText = translations?.dataset.sending || 'Sending...';
+    const successText = translations?.dataset.success || 'Message sent successfully!';
+    const errorText = translations?.dataset.error || 'Something went wrong. Please try again.';
+    const submitText = translations?.dataset.submit || 'Send Message';
+
+    // Form submission handler
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Disable form and show loading state
+      submitButton.disabled = true;
+      buttonText.textContent = sendingText;
+      messageDiv.style.display = 'none';
+      
+      try {
+        // Get form data
+        const formData = new FormData(form);
+        const templateParams = {
+          from_name: formData.get('from_name'),
+          from_email: formData.get('from_email'),
+          message: formData.get('message'),
+          from_website: window.location.hostname
+        };
+
+        // Send email via EmailJS
+        await emailjs.send(serviceId, templateId, templateParams);
+        
+        // Show success message
+        showMessage(successText, 'success');
+        
+        // Reset form
+        form.reset();
+        
+      } catch (error) {
+        console.error('EmailJS Error:', error);
+        
+        // Show error message
+        showMessage(errorText, 'error');
+      } finally {
+        // Reset button state
+        submitButton.disabled = false;
+        buttonText.textContent = submitText;
+      }
+    });
+
+    // Helper function to show messages
+    function showMessage(message: string, type: 'success' | 'error') {
+      messageText.textContent = message;
+      messageDiv.className = `form-message form-message-${type}`;
+      messageDiv.style.display = 'block';
+      
+      // Auto-hide message after 5 seconds
+      setTimeout(() => {
+        messageDiv.style.display = 'none';
+      }, 5000);
+    }
+  });
+</script>

@@ -11,16 +11,18 @@
   },
   "hero": {
     "greeting": "Hi, I'm Brian.",
-    "tagline": "I build things for the web.",
-    "description": "Experienced Applied AI Engineer and cloud architect. A proactive team member dedicated to continuous learning, problem-solving, and helping teams achieve faster results.",
+    "tagline": "I build things using AI.",
+    "description_part1": "Applied AI Engineer specializing in Agentic AI Systems, Large Language Models, and Classical Machine Learning. I work with",
+    "company_name": "Just Forward Consulting GmbH",
+    "description_part2": "to help German SMEs leverage modern AI technologies for real-world impact. Impact First - Not AI First!",
     "cta": "Get in Touch"
   },
   "portfolio": {
     "title": "Portfolio",
     "description": "A selection of projects I've worked on, showcasing different technologies and approaches to solving complex problems.",
     "project1": {
-      "title": "E-commerce Platform",
-      "description": "Full-stack e-commerce solution with modern payment processing",
+      "title": "Multi-Agent Ticketing",
+      "description": "AI-powered multi-agent ticketing system with intelligent routing",
       "fullDescription": "A comprehensive e-commerce platform built for scalability and performance, featuring real-time inventory management and advanced analytics.",
       "overview": "This project involved building a complete e-commerce ecosystem from the ground up, including user authentication, product management, shopping cart functionality, and payment processing integration.",
       "challenge1": "Implementing real-time inventory synchronization across multiple sales channels",
@@ -31,8 +33,8 @@
       "solution3": "Created a unified payment gateway abstraction layer with ML-based fraud detection"
     },
     "project2": {
-      "title": "SaaS Dashboard",
-      "description": "Analytics and reporting dashboard for enterprise clients",
+      "title": "Customer Churn Prediction",
+      "description": "Machine learning model for predicting customer churn behavior",
       "fullDescription": "A powerful SaaS dashboard providing real-time analytics, custom reporting, and data visualization for enterprise customers.",
       "overview": "Built a comprehensive dashboard solution that processes millions of data points daily, providing actionable insights through interactive visualizations and automated reporting.",
       "challenge1": "Processing and visualizing large datasets in real-time",
@@ -43,8 +45,8 @@
       "solution3": "Achieved SOC 2 compliance with comprehensive audit logging and encryption"
     },
     "project3": {
-      "title": "Mobile App",
-      "description": "Cross-platform mobile application with offline capabilities",
+      "title": "Computer Vision Identifier",
+      "description": "Deep learning system for object recognition and classification",
       "fullDescription": "A feature-rich mobile application built with React Native, offering seamless offline functionality and real-time synchronization.",
       "overview": "Developed a cross-platform mobile app that works seamlessly online and offline, with intelligent data synchronization and push notifications.",
       "challenge1": "Implementing robust offline functionality with data synchronization",
@@ -61,11 +63,11 @@
   },
   "about": {
     "title": "About Me",
-    "intro": "I'm Brian Jin, an Applied AI Engineer passionate about building scalable, intelligent systems that solve real-world problems.",
-    "background": "With extensive experience in full-stack development, cloud architecture, and machine learning, I specialize in creating robust solutions that bridge the gap between cutting-edge AI technology and practical business applications.",
-    "company": "Through Brian Jin Unipessoal, I provide consulting and development services, helping companies leverage AI and modern web technologies to accelerate their digital transformation.",
-    "skills": {
-      "title": "Key Skills & Technologies"
+    "experience": "With over 5 years of experience in AI development and data science, I have collaborated with startups and companies across diverse industries – from corporate culture and sustainability to media. My expertise spans from classical machine learning to cutting-edge agentic and generative AI solutions, always taking a holistic approach: from problem definition through development to deployment. My academic foundation includes degrees from Ludwig Maximilian University Munich, CEMS Global Alliance, ESADE Business School, and Tsinghua University.",
+    "motivation": "My driving force is using cutting-edge technologies to solve real-world problems. With work experience in sustainability, I want to leverage my technical expertise to address the challenges of our modern world. For me, technology is a tool and enabler for humanity – it should serve progress and the common good.",
+    "social": {
+      "linkedin": "LinkedIn Profile",
+      "github": "GitHub Profile"
     }
   },
   "contact": {
@@ -73,9 +75,6 @@
     "description": "Ready to discuss your next project? I'd love to hear about your ideas and explore how we can work together.",
     "email": {
       "label": "Email"
-    },
-    "company": {
-      "label": "Company"
     },
     "form": {
       "name": {
@@ -90,7 +89,10 @@
         "label": "Message",
         "placeholder": "Tell me about your project..."
       },
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Sorry, something went wrong. Please try again or contact me directly via email."
     }
   },
   "common": {

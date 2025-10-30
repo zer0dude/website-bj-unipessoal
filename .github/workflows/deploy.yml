@@ -32,6 +32,10 @@ jobs:
         
       - name: Build Astro site
         run: npm run build
+        env:
+          PUBLIC_EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+          PUBLIC_EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+          PUBLIC_EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
         
       - name: Setup Pages
         uses: actions/configure-pages@v4

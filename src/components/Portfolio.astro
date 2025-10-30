@@ -5,27 +5,27 @@ import { getCurrentLocale, getTranslation } from '../i18n/translations';
 const locale = getCurrentLocale(Astro.url);
 const t = (key: string) => getTranslation(locale, key);
 
-// Portfolio projects data (placeholder content)
+// Portfolio projects data with SEO-friendly URLs and AI/ML tech stacks
 const portfolioProjects = [
   {
     title: t('portfolio.project1.title'),
     description: t('portfolio.project1.description'),
-    technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Stripe'],
-    projectUrl: locale === 'en' ? '/en/portfolio/project-1' : '/portfolio/project-1',
-    imageIcon: '/assets/browser.svg'
+    technologies: ['Python', 'FastAPI', 'LangChain', 'OpenAI API', 'PostgreSQL', 'Redis', 'Docker'],
+    projectUrl: locale === 'en' ? '/en/portfolio/multi-agent-ticketing' : '/portfolio/multi-agent-ticketing',
+    imageIcon: '/assets/ai.svg'
   },
   {
     title: t('portfolio.project2.title'),
     description: t('portfolio.project2.description'),
-    technologies: ['Vue.js', 'Python', 'FastAPI', 'PostgreSQL', 'Docker'],
-    projectUrl: locale === 'en' ? '/en/portfolio/project-2' : '/portfolio/project-2',
+    technologies: ['Python', 'Scikit-learn', 'Pandas', 'XGBoost', 'Apache Kafka', 'MLflow', 'AWS SageMaker'],
+    projectUrl: locale === 'en' ? '/en/portfolio/customer-churn-prediction' : '/portfolio/customer-churn-prediction',
     imageIcon: '/assets/database.svg'
   },
   {
     title: t('portfolio.project3.title'),
     description: t('portfolio.project3.description'),
-    technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux'],
-    projectUrl: locale === 'en' ? '/en/portfolio/project-3' : '/portfolio/project-3',
+    technologies: ['Python', 'PyTorch', 'OpenCV', 'YOLO', 'TensorFlow', 'CUDA', 'Docker'],
+    projectUrl: locale === 'en' ? '/en/portfolio/computer-vision-identifier' : '/portfolio/computer-vision-identifier',
     imageIcon: '/assets/code.svg'
   }
 ];

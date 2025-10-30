@@ -1,9 +1,10 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher.astro';
-import { getCurrentLocale, type Locale } from '../i18n/translations';
+import { getCurrentLocale, getTranslation, type Locale } from '../i18n/translations';
 
 // Detect current locale and get appropriate navigation URLs
 const currentLocale = getCurrentLocale(Astro.url);
+const t = (key: string) => getTranslation(currentLocale, key);
 ---
 
 <aside
@@ -19,7 +20,7 @@ const currentLocale = getCurrentLocale(Astro.url);
     <a href="/" class="w-nav-brand" aria-label="home">
       <div class="niv-data">
         <img
-          src="/assets/sam.jpg"
+          src="/assets/brian.jpg"
           loading="eager"
           alt="Profile picture"
           class="niv-image"
@@ -42,7 +43,7 @@ const currentLocale = getCurrentLocale(Astro.url);
           alt=""
           class="nav-link-image"
         />
-        <div>Home</div>
+        <div>{t('nav.home')}</div>
       </a>
       
       <a
@@ -50,30 +51,30 @@ const currentLocale = getCurrentLocale(Astro.url);
         class="nav-link-container w-inline-block"
       >
         <img
-          src="/assets/favorite.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Portfolio</div>
-      </a>
-      
-      <!-- Portfolio sub-items (indented) -->
-      <a
-        href={currentLocale === 'en' ? '/en/portfolio/project-1' : '/portfolio/project-1'}
-        class="nav-link-container nav-link-sub w-inline-block"
-      >
-        <img
           src="/assets/code.svg"
           loading="eager"
           alt=""
           class="nav-link-image"
         />
-        <div>E-commerce Platform</div>
+        <div>{t('nav.portfolio')}</div>
+      </a>
+      
+      <!-- Portfolio sub-items (indented) -->
+      <a
+        href={currentLocale === 'en' ? '/en/portfolio/multi-agent-ticketing' : '/portfolio/multi-agent-ticketing'}
+        class="nav-link-container nav-link-sub w-inline-block"
+      >
+        <img
+          src="/assets/ai.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>{t('portfolio.project1.title')}</div>
       </a>
       
       <a
-        href={currentLocale === 'en' ? '/en/portfolio/project-2' : '/portfolio/project-2'}
+        href={currentLocale === 'en' ? '/en/portfolio/customer-churn-prediction' : '/portfolio/customer-churn-prediction'}
         class="nav-link-container nav-link-sub w-inline-block"
       >
         <img
@@ -82,11 +83,11 @@ const currentLocale = getCurrentLocale(Astro.url);
           alt=""
           class="nav-link-image"
         />
-        <div>SaaS Dashboard</div>
+        <div>{t('portfolio.project2.title')}</div>
       </a>
       
       <a
-        href={currentLocale === 'en' ? '/en/portfolio/project-3' : '/portfolio/project-3'}
+        href={currentLocale === 'en' ? '/en/portfolio/computer-vision-identifier' : '/portfolio/computer-vision-identifier'}
         class="nav-link-container nav-link-sub w-inline-block"
       >
         <img
@@ -95,7 +96,7 @@ const currentLocale = getCurrentLocale(Astro.url);
           alt=""
           class="nav-link-image"
         />
-        <div>Mobile App</div>
+        <div>{t('portfolio.project3.title')}</div>
       </a>
       
       <a
@@ -103,12 +104,12 @@ const currentLocale = getCurrentLocale(Astro.url);
         class="nav-link-container w-inline-block"
       >
         <img
-          src="/assets/home.svg"
+          src="/assets/favorite.svg"
           loading="eager"
           alt=""
           class="nav-link-image"
         />
-        <div>About</div>
+        <div>{t('nav.about')}</div>
       </a>
       
       <a
@@ -116,12 +117,12 @@ const currentLocale = getCurrentLocale(Astro.url);
         class="nav-link-container w-inline-block"
       >
         <img
-          src="/assets/dns.svg"
+          src="/assets/contact.svg"
           loading="eager"
           alt=""
           class="nav-link-image"
         />
-        <div>Contact</div>
+        <div>{t('nav.contact')}</div>
       </a>
     </nav>
 

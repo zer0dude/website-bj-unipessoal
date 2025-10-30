@@ -206,6 +206,21 @@ ul {
   padding-left: 40px;
 }
 
+/* Custom content links - only within paragraphs */
+p a {
+  color: #4A9EFF;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+p a:hover {
+  opacity: 0.8;
+}
+
+p a:visited {
+  color: #4A9EFF;
+}
+
 .content {
   width: 100vw;
   height: 100vh;
@@ -238,7 +253,7 @@ ul {
   width: 100%;
   max-width: 680px;
   grid-column-gap: 68px;
-  grid-row-gap: 68px;
+  grid-row-gap: 34px;
   flex-direction: column;
   display: flex;
 }
@@ -542,12 +557,12 @@ ul {
 
 /* Hero Section */
 .hero-section {
-  padding-bottom: 48px;
+  padding-bottom: 24px;
 }
 
 /* Portfolio Section */
 .portfolio-section {
-  padding: 68px 0;
+  padding: 34px 0;
 }
 
 .portfolio-card {
@@ -556,14 +571,14 @@ ul {
 
 /* About Section */
 .about-section {
-  padding: 68px 0;
+  padding: 34px 0;
   border-top: 1px solid #353535;
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 24px;
 }
 
 .about-text {
@@ -585,9 +600,50 @@ ul {
   margin-top: 16px;
 }
 
+/* Social Links */
+.social-links-section {
+}
+
+.social-links-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #2b2b2b;
+  border: 1px solid #353535;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background-color: #353535;
+  border-color: #4a4a4a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.social-link:hover .social-icon {
+  opacity: 1;
+}
+
 /* Contact Section */
 .contact-section {
-  padding: 68px 0;
+  padding: 34px 0;
   border-top: 1px solid #353535;
 }
 
@@ -601,7 +657,7 @@ ul {
 .contact-content {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 32px;
 }
 
 .contact-info {
@@ -720,6 +776,37 @@ ul {
 .form-button {
   align-self: flex-start;
   margin-top: 16px;
+}
+
+.form-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form Messages */
+.form-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.form-message p {
+  margin: 0;
+  color: inherit;
+}
+
+.form-message-success {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+.form-message-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
 }
 
 /* Project Details */

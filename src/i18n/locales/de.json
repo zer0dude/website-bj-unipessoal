@@ -6,21 +6,23 @@
   "nav": {
     "home": "Home",
     "portfolio": "Portfolio",
-    "about": "About",
-    "contact": "Contact"
+    "about": "Über mich",
+    "contact": "Kontakt"
   },
   "hero": {
-    "greeting": "Hi, I'm Brian.",
-    "tagline": "I build things for the web.",
-    "description": "Experienced Applied AI Engineer and cloud architect. A proactive team member dedicated to continuous learning, problem-solving, and helping teams achieve faster results.",
-    "cta": "Get in Touch"
+    "greeting": "Hi, ich bin Brian.",
+    "tagline": "Ich entwickle Lösungen mit KI.",
+    "description_part1": "Applied AI Engineer mit Spezialisierung auf Agentischen KI Systemen, Large Language Models und Klassisches Machine Learning. Ich arbeite mit",
+    "company_name": "Just Forward Consulting GmbH",
+    "description_part2": "zusammen, um deutschen KMUs dabei zu helfen, moderne KI-Technologien für echte Wirkung zu nutzen. Impact First - Not AI First!",
+    "cta": "Kontakt aufnehmen"
   },
   "portfolio": {
     "title": "Portfolio",
     "description": "A selection of projects I've worked on, showcasing different technologies and approaches to solving complex problems.",
     "project1": {
-      "title": "E-commerce Platform",
-      "description": "Full-stack e-commerce solution with modern payment processing",
+      "title": "Multi-Agent Ticketing",
+      "description": "AI-powered multi-agent ticketing system with intelligent routing",
       "fullDescription": "A comprehensive e-commerce platform built for scalability and performance, featuring real-time inventory management and advanced analytics.",
       "overview": "This project involved building a complete e-commerce ecosystem from the ground up, including user authentication, product management, shopping cart functionality, and payment processing integration.",
       "challenge1": "Implementing real-time inventory synchronization across multiple sales channels",
@@ -31,8 +33,8 @@
       "solution3": "Created a unified payment gateway abstraction layer with ML-based fraud detection"
     },
     "project2": {
-      "title": "SaaS Dashboard",
-      "description": "Analytics and reporting dashboard for enterprise clients",
+      "title": "Customer Churn Prediction",
+      "description": "Machine learning model for predicting customer churn behavior",
       "fullDescription": "A powerful SaaS dashboard providing real-time analytics, custom reporting, and data visualization for enterprise customers.",
       "overview": "Built a comprehensive dashboard solution that processes millions of data points daily, providing actionable insights through interactive visualizations and automated reporting.",
       "challenge1": "Processing and visualizing large datasets in real-time",
@@ -43,8 +45,8 @@
       "solution3": "Achieved SOC 2 compliance with comprehensive audit logging and encryption"
     },
     "project3": {
-      "title": "Mobile App",
-      "description": "Cross-platform mobile application with offline capabilities",
+      "title": "Computer Vision Identifier",
+      "description": "Deep learning system for object recognition and classification",
       "fullDescription": "A feature-rich mobile application built with React Native, offering seamless offline functionality and real-time synchronization.",
       "overview": "Developed a cross-platform mobile app that works seamlessly online and offline, with intelligent data synchronization and push notifications.",
       "challenge1": "Implementing robust offline functionality with data synchronization",
@@ -60,37 +62,37 @@
     "technologies": "Technologies Used"
   },
   "about": {
-    "title": "About Me",
-    "intro": "I'm Brian Jin, an Applied AI Engineer passionate about building scalable, intelligent systems that solve real-world problems.",
-    "background": "With extensive experience in full-stack development, cloud architecture, and machine learning, I specialize in creating robust solutions that bridge the gap between cutting-edge AI technology and practical business applications.",
-    "company": "Through Brian Jin Unipessoal, I provide consulting and development services, helping companies leverage AI and modern web technologies to accelerate their digital transformation.",
-    "skills": {
-      "title": "Key Skills & Technologies"
+    "title": "Über mich",
+    "experience": "Mit mehr als 5 Jahren Erfahrung in KI-Entwicklung und Data Science habe ich mit Startups und Unternehmen verschiedener Branchen zusammengearbeitet – von Unternehmenskultur über Nachhaltigkeit bis zur Medienbranche. Meine Expertise reicht von klassischem Machine Learning bis hin zu modernsten agentischen und generativen KI-Lösungen, wobei ich stets ganzheitlich vorgehe: von der Problemdefinition über die Entwicklung bis zum Deployment. Meine akademische Grundlage bilden Abschlüsse der Ludwig-Maximilians-Universität München, CEMS Global Alliance, ESADE Business School und Tsinghua University.",
+    "motivation": "Mein Antrieb ist es, modernste Technologien zu nutzen, um echte Probleme zu lösen. Mit Arbeitserfahrung im Bereich Nachhaltigkeit möchte ich meine technischen Kenntnisse einsetzen, um den Herausforderungen der modernen Welt zu begegnen. Für mich ist Technologie ein Werkzeug und Enabler der Menschheit – sie soll dem Fortschritt und dem Gemeinwohl dienen.",
+    "social": {
+      "linkedin": "LinkedIn Profil",
+      "github": "GitHub Profil"
     }
   },
   "contact": {
-    "title": "Get in Touch",
-    "description": "Ready to discuss your next project? I'd love to hear about your ideas and explore how we can work together.",
+    "title": "Kontakt aufnehmen",
+    "description": "Bereit, über Ihr nächstes Projekt zu sprechen? Ich würde gerne von Ihren Ideen hören und erkunden, wie wir zusammenarbeiten können.",
     "email": {
-      "label": "Email"
-    },
-    "company": {
-      "label": "Company"
+      "label": "E-Mail"
     },
     "form": {
       "name": {
         "label": "Name",
-        "placeholder": "Your name"
+        "placeholder": "Ihr Name"
       },
       "email": {
-        "label": "Email",
-        "placeholder": "your@email.com"
+        "label": "E-Mail",
+        "placeholder": "ihre@email.com"
       },
       "message": {
-        "label": "Message",
-        "placeholder": "Tell me about your project..."
+        "label": "Nachricht",
+        "placeholder": "Erzählen Sie mir von Ihrem Projekt..."
       },
-      "submit": "Send Message"
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
+      "error": "Entschuldigung, etwas ist schief gelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie mich direkt per E-Mail."
     }
   },
   "common": {
