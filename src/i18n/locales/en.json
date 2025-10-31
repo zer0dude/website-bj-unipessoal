@@ -13,7 +13,7 @@
     "greeting": "Hi, I'm Brian.",
     "tagline": "I build things using AI.",
     "description_part1": "Applied AI Engineer specializing in Agentic AI Systems, Large Language Models, and Classical Machine Learning. I work with",
-    "company_name": "Just Forward Consulting GmbH",
+    "company_name": "Just Forward Consulting",
     "description_part2": "to help German SMEs leverage modern AI technologies for real-world impact. Impact First - Not AI First!",
     "cta": "Get in Touch"
   },
@@ -63,7 +63,7 @@
   },
   "about": {
     "title": "About Me",
-    "experience": "With over 5 years of experience in AI development and data science, I have collaborated with startups and companies across diverse industries – from corporate culture and sustainability to media. My expertise spans from classical machine learning to cutting-edge agentic and generative AI solutions, always taking a holistic approach: from problem definition through development to deployment. My academic foundation includes degrees from Ludwig Maximilian University Munich, CEMS Global Alliance, ESADE Business School, and Tsinghua University.",
+    "experience": "With diverse experiences in AI development and data science, I have collaborated with startups and companies across various industries – from corporate culture and sustainability to media. My expertise spans from classical machine learning to cutting-edge agentic and generative AI solutions, always taking a holistic approach: from problem definition through development to deployment. My academic foundation includes degrees from Ludwig Maximilian University Munich, CEMS Global Alliance, ESADE Business School, and Tsinghua University.",
     "motivation": "My driving force is using cutting-edge technologies to solve real-world problems. With work experience in sustainability, I want to leverage my technical expertise to address the challenges of our modern world. For me, technology is a tool and enabler for humanity – it should serve progress and the common good.",
     "social": {
       "linkedin": "LinkedIn Profile",
