@@ -19,47 +19,58 @@
   },
   "portfolio": {
     "title": "Portfolio",
-    "description": "A selection of projects I've worked on, showcasing different technologies and approaches to solving complex problems.",
+    "description": "Eine Auswahl von KI-Projekten, an denen ich gearbeitet habe, die verschiedene Technologien und Ansätze zur Lösung komplexer Probleme mit moderner künstlicher Intelligenz zeigen.",
     "project1": {
-      "title": "Multi-Agent Ticketing",
-      "description": "AI-powered multi-agent ticketing system with intelligent routing",
-      "fullDescription": "A comprehensive e-commerce platform built for scalability and performance, featuring real-time inventory management and advanced analytics.",
-      "overview": "This project involved building a complete e-commerce ecosystem from the ground up, including user authentication, product management, shopping cart functionality, and payment processing integration.",
-      "challenge1": "Implementing real-time inventory synchronization across multiple sales channels",
-      "challenge2": "Building a scalable architecture to handle high traffic during peak seasons",
-      "challenge3": "Integrating multiple payment gateways with fraud detection",
-      "solution1": "Developed a distributed caching system using Redis for inventory management",
-      "solution2": "Implemented microservices architecture with Docker and Kubernetes",
-      "solution3": "Created a unified payment gateway abstraction layer with ML-based fraud detection"
+      "title": "Multi-Agent Technical Ticket Assistant",
+      "description": "Fortschrittliche KI-Anwendung demonstriert pragmatische Automatisierung technischer Support-Workflows durch ausgeklügelte Multi-Agent-Architektur",
+      "executiveSummary": "Diese umfassende Demonstration zeigt, wie moderne KI-Anwendungsprinzipien den technischen Support für deutsche KMUs transformieren können. Anhand von Pumpen GmbH, einem fiktiven Wasserpumpenhersteller, als Fallstudie illustriert dieses Projekt die praktische Implementierung von Multi-Agent-Systemen, Context Engineering und Human-in-the-Loop-Designmustern zur drastischen Reduzierung der menschlichen Arbeitsbelastung bei gleichzeitiger Aufrechterhaltung exzellenter Servicequalität. Es steht eine vollständig interaktive Live-Demonstration zur Verfügung, die direkte Interaktion mit dem Multi-Agent-System ermöglicht.",
+      "businessContext": "Technischer Support stellt eine signifikante operative Belastung für Fertigungsunternehmen wie Pumpen GmbH dar. Wertvolle Ingenieurressourcen werden von der Kernproduktentwicklung abgezogen, um routinemäßige Kundenanfragen zu Pumpenspezifikationen, Fehlerbehebungsverfahren und Wartungsprotokollen zu bearbeiten. Diese Demo adressiert eine kritische Geschäftsherausforderung: Wie können fortschrittliche KI-Anwendungen technische Expertise bewahren und gleichzeitig repetitive Support-Workflows automatisieren?",
+      "agentArchitecture": "Eine Best-Practice KI-Agent-Architektur sollte der KI essentielle Werkzeuge bereitstellen: Kontext, ähnlich einem kleinen Whiteboard für die KI, um Notizen und relevante Informationen zu speichern. Externe Ressourcen für den Zugriff auf relevante Informationen mit verschiedenen Zugriffsarten wie Lesen oder sogar Schreiben. Darüber hinaus profitieren KI-Agenten von der Fähigkeit, Artefakte ihrer Arbeit zu erstellen - Arbeitsergebnisse, die eine statischere und langfristigere Form verdienen als der ephemere Kontext und die für die mit der KI arbeitenden Parteien relevant sind. Eine solche Architektur platziert einen KI-Agenten mit klarem Umfang und eindeutigen Grenzen in der Welt, wodurch es sowohl für den KI-Agenten einfacher wird, effektiv zu arbeiten, als auch für andere Parteien, vorhersagbar mit ihm zu interagieren.",
+      "technicalApproach": "KI-Agent-Entwicklung profitiert ebenso wie jede andere Form komplexer Entwicklung immens von lean agiler Entwicklung und Prototyping, um schnell und kostengünstig den Kontext der Aufgabe und ihre schwer vorhersehbaren Herausforderungen zu verstehen. Diese Demonstration wurde mit Streamlit erstellt, einer Bibliothek, die schnelle Entwicklung einfacher Prototypen ermöglicht, ohne sich auf UI-Komplexität zu konzentrieren. Die Implementierung ist modell-agnostisch, hochmodular und vermeidet bewusst agentische Orchestrierungstools wie LangChain oder n8n. Durch diesen Ansatz in frühen Prototyping-Phasen gewinnt man besseres Verständnis für Aufgabenkontext und Anforderungen für komplexere, mächtigere Werkzeuge. Diese Strategie ermöglicht Anpassung an ausgeklügelte Frameworks erst nach bewiesenem Wert und vermeidet vorzeitige technologische Festlegung.",
+      "keyOutcomes": "Diese Demonstration beweist, dass ausgeklügelte KI-Anwendungen messbaren Geschäftswert liefern können, ohne die Servicequalität zu kompromittieren. Das System zeigt praktische Ansätze zur Kontextbewahrung, Agentenkoordination und Human-in-the-Loop-Validierung auf, die direkt auf reale Unternehmensimplementierungen anwendbar sind. Das Projekt etabliert ein Framework für wertorientiertes KI-Anwendungsdesign, das Geschäftsergebnisse über technologische Komplexität priorisiert.",
+      "businessValue": "Für deutsche KMUs mit ähnlichen technischen Support-Herausforderungen bietet diese Demonstration einen Fahrplan für die Implementierung fortschrittlicher KI-Lösungen, die sowohl technische Anforderungen als auch Geschäftsbeschränkungen respektieren. Der Ansatz betont praktische Wertgenerierung, nachhaltige Implementierungspraktiken und wartbare Systemarchitekturen, die sich mit sich ändernden Geschäftsanforderungen weiterentwickeln können.",
+      "demoTitle": "Live-Demonstration",
+      "demoDescription": "Erleben Sie das Multi-Agent-System in Aktion durch eine interaktive Streamlit-Anwendung. Die Demo ermöglicht es Ihnen, technische Tickets zu übermitteln und die koordinierte Antwort mehrerer KI-Agenten zu beobachten, während sie unter Verwendung des RPE-Frameworks recherchieren, analysieren und Lösungen formulieren.",
+      "githubTitle": "Technische Implementierung",
+      "githubDescription": "Erkunden Sie die vollständige Quellcode-Implementierung, einschließlich Multi-Agent-Architekturmustern, Context-Engineering-Techniken und Integrationsstrategien. ",
+      "rpeTitle": "RPE Workflow-Architektur",
+      "rpeDescription": "Wie auch Menschen erfüllen künstliche Intelligenzen Aufgaben besser, wenn sie sich vor der Umsetzung systematisch mit dem Kontext der Aufgabe auseinandersetzen. Menschen springen bei komplexen Aufgaben nicht direkt in die Bearbeitung, sondern verstehen zunächst die Aufgabe, recherchieren fehlende Informationen und relevante Referenzen, bevor sie schrittweise Aktionen planen. Erst dann wird die eigentliche Bearbeitung durch Umsetzung des Plans begonnen. Das RPE (Research-Plan-Execute) Framework ahmt diesen systematischen Ansatz nach und steigert die Fähigkeiten agentischer Systeme erheblich. Das untenstehende Diagramm illustriert diesen agentischen Workflow und zeigt sowohl das RPE-Framework als auch seine KI-Agent-Architektur in harmonischem Zusammenspiel.",
+      "technologiesTitle": "Fortschrittliches KI-Anwendungs-Framework",
+      "technologiesDescription": "Dieses Projekt demonstriert Beherrschung modernster KI-Anwendungsentwicklungsprinzipien und kombiniert mehrere ausgeklügelte Ansätze zur Bereitstellung praktischen Geschäftswerts."
     },
     "project2": {
       "title": "Customer Churn Prediction",
-      "description": "Machine learning model for predicting customer churn behavior",
-      "fullDescription": "A powerful SaaS dashboard providing real-time analytics, custom reporting, and data visualization for enterprise customers.",
-      "overview": "Built a comprehensive dashboard solution that processes millions of data points daily, providing actionable insights through interactive visualizations and automated reporting.",
-      "challenge1": "Processing and visualizing large datasets in real-time",
-      "challenge2": "Creating flexible, customizable reporting features",
-      "challenge3": "Ensuring enterprise-grade security and compliance",
-      "solution1": "Implemented streaming data processing with Apache Kafka and TimescaleDB",
-      "solution2": "Built a drag-and-drop report builder with Vue.js and D3.js",
-      "solution3": "Achieved SOC 2 compliance with comprehensive audit logging and encryption"
+      "description": "Klassische Machine-Learning-Anwendung, die auf Kreditkarten-Kundendaten trainiert, um Kundenabwanderung vorherzusagen",
+      "fullDescription": "Eine umfassende Machine-Learning-Lösung, die Verhaltensmuster von Kreditkarten-Kunden analysiert, um die Abwanderungswahrscheinlichkeit vorherzusagen und proaktive Bindungsstrategien zu ermöglichen.",
+      "overview": "Aufbau einer End-to-End ML-Pipeline, die Kreditkarten-Transaktionsdaten, Kundendemografie und Nutzungsmuster verarbeitet, um gefährdete Kunden zu identifizieren und umsetzbare Erkenntnisse für Kundenbindungs-Teams zu liefern.",
+      "challenge1": "Umgang mit stark unausgewogenen Datensätzen mit niedrigen Abwanderungsraten bei Kreditkarten-Kunden",
+      "challenge2": "Engineering aussagekräftiger Features aus komplexen Transaktions- und Verhaltensdaten",
+      "challenge3": "Gewährleistung der Modellerklärbarkeit für Geschäftsinteressierte und regulatorische Compliance",
+      "solution1": "Anwendung fortschrittlicher Sampling-Techniken und Ensemble-Methoden zur Behebung des Klassenungleichgewichts",
+      "solution2": "Entwicklung ausgeklügelter Feature-Engineering-Pipelines, die überwachte und unüberwachte Lerntechniken kombinieren",
+      "solution3": "Implementierung umfassender Modellerklärbarkeits-Frameworks mit SHAP-Werten und Feature-Importance-Analysen"
     },
     "project3": {
       "title": "Computer Vision Identifier",
-      "description": "Deep learning system for object recognition and classification",
-      "fullDescription": "A feature-rich mobile application built with React Native, offering seamless offline functionality and real-time synchronization.",
-      "overview": "Developed a cross-platform mobile app that works seamlessly online and offline, with intelligent data synchronization and push notifications.",
-      "challenge1": "Implementing robust offline functionality with data synchronization",
-      "challenge2": "Optimizing performance for different device specifications",
-      "challenge3": "Creating a consistent user experience across platforms",
-      "solution1": "Built offline-first architecture with Redux Persist and background sync",
-      "solution2": "Implemented lazy loading and memory optimization techniques",
-      "solution3": "Used React Native with platform-specific customizations when needed"
+      "description": "Computer-Vision-System zur Erkennung bestimmter Personen oder Objekte für B-Roll-Klassifizierung",
+      "fullDescription": "Eine intelligente Computer-Vision-Pipeline, die automatisch spezifische Personen oder Objekte in Videoinhalten identifiziert und klassifiziert und damit die Organisation und den Abruf von B-Roll-Material optimiert.",
+      "overview": "Entwicklung eines spezialisierten Computer-Vision-Systems, das Videoinhalte verarbeitet, um bestimmte Personen oder Objekte automatisch zu erkennen, zu klassifizieren und zu katalogisieren, wodurch die Effizienz des Medien-Workflows für Content-Ersteller dramatisch verbessert wird.",
+      "challenge1": "Erzielung akkurater Personen-/Objekterkennung bei variierenden Lichtverhältnissen und Kamerawinkeln",
+      "challenge2": "Aufbau effizienter Verarbeitungs-Pipelines für große Mengen an Videoinhalten",
+      "challenge3": "Erstellung eines flexiblen Klassifizierungssystems, das an verschiedene Inhaltstypen und Anforderungen anpassbar ist",
+      "solution1": "Implementierung modernster YOLO-Architektur, optimiert für spezifische Erkennungsaufgaben",
+      "solution2": "Entwicklung robuster Vor- und Nachverarbeitungs-Pipelines für konsistente Leistung",
+      "solution3": "Aufbau modularer Klassifizierungskomponenten, die einfache Anpassung für verschiedene Anwendungsfälle ermöglichen"
     },
     "overview": "Project Overview",
     "challenges": "Key Challenges",
     "solutions": "Solutions Implemented",
-    "technologies": "Technologies Used"
+    "technologies": "Technologies Used",
+    "comingSoon": {
+      "title": "Demnächst verfügbar",
+      "message": "Die detaillierte Fallstudie-Dokumentation für dieses Projekt wird derzeit vorbereitet. Schauen Sie bald wieder vorbei!",
+      "backToPortfolio": "← Zurück zum Portfolio"
+    }
   },
   "about": {
     "title": "Über mich",
@@ -98,7 +109,7 @@
   "common": {
     "loading": "Loading...",
     "error": "Error",
-    "back": "Back"
+    "back": "Zurück"
   },
   "legal": {
     "impressum": {

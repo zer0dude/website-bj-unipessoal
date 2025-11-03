@@ -23,15 +23,15 @@ const { slug } = Astro.params;
 const projectMap = {
   'multi-agent-ticketing': {
     key: 'project1',
-    technologies: ['Python', 'FastAPI', 'LangChain', 'OpenAI API', 'PostgreSQL', 'Redis', 'Docker']
+    technologies: ['Multi-Agent System', 'Context Engineering', 'RPE', 'RAG', 'Human-in-the-Loop', 'Lean Prototyping', 'Streamlit', 'Python']
   },
   'customer-churn-prediction': {
     key: 'project2', 
-    technologies: ['Python', 'Scikit-learn', 'Pandas', 'XGBoost', 'Apache Kafka', 'MLflow', 'AWS SageMaker']
+    technologies: ['Python', 'Scikit-Learn', 'Machine Learning', 'Supervised Learning', 'Unsupervised Learning', 'Model Explainability', 'Streamlit']
   },
   'computer-vision-identifier': {
     key: 'project3',
-    technologies: ['Python', 'PyTorch', 'OpenCV', 'YOLO', 'TensorFlow', 'CUDA', 'Docker']
+    technologies: ['Computer Vision', 'Classification', 'YOLO', 'Pipelines']
   }
 };
 
@@ -58,41 +58,104 @@ const projectKey = `portfolio.${project.key}`;
         
         <div class="content-container">
           <h1>{t(`${projectKey}.title`)}</h1>
-          <p class="project-desc">{t(`${projectKey}.fullDescription`)}</p>
+          <p class="project-desc subtitle">{t(`${projectKey}.description`)}</p>
           
-          <div class="project-details">
-            <div class="project-section">
-              <div class="mini-label-white">{t('portfolio.overview')}</div>
-              <p class="project-desc">{t(`${projectKey}.overview`)}</p>
-            </div>
-            
-            <div class="project-section">
-              <div class="mini-label-white">{t('portfolio.challenges')}</div>
-              <ul class="project-list">
-                <li class="project-desc">{t(`${projectKey}.challenge1`)}</li>
-                <li class="project-desc">{t(`${projectKey}.challenge2`)}</li>
-                <li class="project-desc">{t(`${projectKey}.challenge3`)}</li>
-              </ul>
-            </div>
-            
-            <div class="project-section">
-              <div class="mini-label-white">{t('portfolio.solutions')}</div>
-              <ul class="project-list">
-                <li class="project-desc">{t(`${projectKey}.solution1`)}</li>
-                <li class="project-desc">{t(`${projectKey}.solution2`)}</li>
-                <li class="project-desc">{t(`${projectKey}.solution3`)}</li>
-              </ul>
-            </div>
-            
-            <div class="project-section">
-              <div class="mini-label-white">{t('portfolio.technologies')}</div>
-              <div class="chips-container">
-                {project.technologies.map(tech => (
-                  <div class="single-chip">{tech}</div>
-                ))}
+          {slug === 'multi-agent-ticketing' ? (
+            <div class="project-details">
+              <!-- Technologies -->
+              <div class="project-section">
+                <div class="mini-label-white">{t('portfolio.technologies')}</div>
+                <div class="chips-container">
+                  {project.technologies.map(tech => (
+                    <div class="single-chip">{tech}</div>
+                  ))}
+                </div>
+              </div>
+              
+              <!-- Executive Summary -->
+              <div class="project-section">
+                <div class="mini-label-white">Executive Summary</div>
+                <p class="project-desc">{t(`${projectKey}.executiveSummary`)}</p>
+              </div>
+              
+              <!-- Business Context -->
+              <div class="project-section">
+                <div class="mini-label-white">Business Context</div>
+                <p class="project-desc">{t(`${projectKey}.businessContext`)}</p>
+              </div>
+              
+              <!-- Live Demo & Source Code -->
+              <div class="project-section">
+                <div class="project-section" style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                  <div class="mini-label-white">{t(`${projectKey}.demoTitle`)}</div>
+                  <p class="project-desc">{t(`${projectKey}.demoDescription`)}</p>
+                  <div style="margin-top: 1rem;">
+                    <a href="https://multi-agent-ticket-assistant-rb9rmdpsbp4tvnmvrgxr6j.streamlit.app/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #ff6b6b; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; margin-right: 1rem; transition: background 0.3s;">
+                      🚀 Live Demo
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="project-section" style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                  <div class="mini-label-white">{t(`${projectKey}.githubTitle`)}</div>
+                  <p class="project-desc">{t(`${projectKey}.githubDescription`)}</p>
+                  <div style="margin-top: 1rem;">
+                    <a href="https://github.com/zer0dude/multi-agent-ticket-assistant" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #333; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; transition: background 0.3s;">
+                      💻 View Source Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- RPE Workflow Architecture -->
+              <div class="project-section">
+                <div class="mini-label-white">{t(`${projectKey}.rpeTitle`)}</div>
+                <p class="project-desc">{t(`${projectKey}.rpeDescription`)}</p>
+                <div style="text-align: center; margin: 2rem 0;">
+                  <img src="/assets/RPE_ticket_agent.png" alt="RPE Workflow Architecture" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
+                </div>
+              </div>
+              
+              <!-- AI Agent Architecture -->
+              <div class="project-section">
+                <div class="mini-label-white">AI Agent Architecture</div>
+                <p class="project-desc">{t(`${projectKey}.agentArchitecture`)}</p>
+              </div>
+              
+              <!-- Technical Approach -->
+              <div class="project-section">
+                <div class="mini-label-white">Technical Approach</div>
+                <p class="project-desc">{t(`${projectKey}.technicalApproach`)}</p>
+              </div>
+              
+              <!-- Key Outcomes -->
+              <div class="project-section">
+                <div class="mini-label-white">Key Outcomes</div>
+                <p class="project-desc">{t(`${projectKey}.keyOutcomes`)}</p>
+              </div>
+              
+              <!-- Business Value -->
+              <div class="project-section">
+                <div class="mini-label-white">Business Value</div>
+                <p class="project-desc">{t(`${projectKey}.businessValue`)}</p>
               </div>
             </div>
-          </div>
+          ) : (
+            <div class="project-details">
+              <div class="project-section" style="text-align: center; padding: 4rem 0;">
+                <h2>{t('portfolio.comingSoon.title')}</h2>
+                <p class="project-desc" style="font-size: 1.2rem; margin: 2rem 0;">{t('portfolio.comingSoon.message')}</p>
+                <div class="project-section">
+                  <div class="mini-label-white">{t('portfolio.technologies')}</div>
+                  <div class="chips-container">
+                    {project.technologies.map(tech => (
+                      <div class="single-chip">{tech}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </nav>
