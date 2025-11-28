@@ -31,7 +31,7 @@
       "businessValue": "For German SMEs facing similar technical support challenges, this demonstration provides a roadmap for implementing advanced AI solutions that respect both technical requirements and business constraints. The approach emphasizes practical value generation, sustainable implementation practices, and maintainable system architecture that can evolve with changing business needs.",
       "demoTitle": "Live Demonstration",
       "demoDescription": "Experience the multi-agent system in action through an interactive Streamlit application. The demo allows you to submit technical tickets and observe the coordinated response of multiple AI agents as they research, analyze, and formulate solutions using the RPE framework.",
-      "githubTitle": "Technical Implementation",
+      "githubTitle": "Source Code",
       "githubDescription": "Explore the complete source code implementation, including multi-agent architecture patterns, context engineering techniques, and integration strategies. ",
       "rpeTitle": "RPE Workflow Architecture",
       "rpeDescription": "Like humans, artificial intelligences perform tasks better when they systematically engage with the task context before implementation. Humans don't jump directly into complex tasks, but first understand the task, research missing information and relevant references, then plan step-by-step actions before execution. The RPE (Research-Plan-Execute) framework mimics this systematic approach and greatly enhances agentic system capabilities. The diagram below illustrates this agentic workflow, showcasing both the RPE framework and its AI Agent Architecture working in harmony."
@@ -49,7 +49,7 @@
       "solution3": "Implemented comprehensive model explainability frameworks with SHAP values and feature importance analysis"
     },
     "project3": {
-      "title": "Computer Vision Identifier",
+      "title": "AI Video Face Search",
       "description": "Computer vision system detecting specified people or objects for B-roll classification",
       "fullDescription": "An intelligent computer vision pipeline that automatically identifies and classifies specific people or objects in video content, streamlining B-roll footage organization and retrieval.",
       "overview": "Developed a specialized computer vision system that processes video content to automatically detect, classify, and catalog specific individuals or objects, dramatically improving media workflow efficiency for content creators.",
@@ -58,7 +58,18 @@
       "challenge3": "Creating a flexible classification system adaptable to different content types and requirements",
       "solution1": "Implemented state-of-the-art YOLO architecture optimized for specific detection tasks",
       "solution2": "Developed robust preprocessing and post-processing pipelines for consistent performance",
-      "solution3": "Built modular classification components allowing easy customization for different use cases"
+      "solution3": "Built modular classification components allowing easy customization for different use cases",
+      "executiveSummary": "This application automates the labor-intensive process of video indexing. Originally designed for media production teams, it uses advanced computer vision to scan hours of footage and instantly locate specific individuals, transforming a manual search task into an automated, high-speed workflow.",
+      "businessContext": "Content creators and media archives face a common challenge: retrieving specific footage from massive video libraries is slow and expensive. Manual review of B-roll or archival footage creates a bottleneck. This solution addresses this by enabling 'semantic' search within video content—finding people not by file name, but by their visual identity.",
+      "technicalApproach": "The system utilizes a One-Shot Learning approach using Deep Learning (Inception Resnet V1). Unlike traditional models requiring thousands of training images, this architecture 'enrolls' a new identity from just a few reference photos. It combines MTCNN for robust face detection with Facenet-PyTorch for generating 512-dimensional embeddings, allowing for precise identity matching across varying lighting and angles.",
+      "keyOutcomes": "Achieved real-time processing speeds for standard definition video. The system successfully handles partial occlusions and profile views. Provided a user-friendly Streamlit interface that abstracts complex ML operations, making the technology accessible to non-technical video editors.",
+      "businessValue": "Drastically reduces post-production search time, allowing teams to repurpose existing content more effectively. The 'enrollment' feature offers flexibility to track new subjects without engineering intervention, ensuring the tool scales with the organization's needs.",
+      "demoTitle": "Live Streamlit Demo",
+      "demoDescription": "Try the application yourself. Upload a video and a reference photo (or use the demo data) to see the face search in action.",
+      "githubTitle": "Source Code",
+      "githubDescription": "View the repository for technical details on the computer vision pipeline, embedding generation, and performance optimization.",
+      "rpeTitle": "Computer Vision Pipeline",
+      "rpeDescription": "The system follows a modular pipeline: Frame Extraction -> Face Detection (MTCNN) -> Embedding Generation (Inception Resnet) -> Vector Similarity Search. This modularity allows for independent optimization of each stage, balancing speed and accuracy."
     },
     "overview": "Project Overview",
     "challenges": "Key Challenges",
