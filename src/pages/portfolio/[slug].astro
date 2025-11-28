@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   return [
     { params: { slug: 'multi-agent-ticketing' } },
     { params: { slug: 'customer-churn-prediction' } },
-    { params: { slug: 'computer-vision-identifier' } }
+    { params: { slug: 'ai-video-face-search' } }
   ];
 }
 
@@ -23,15 +23,21 @@ const { slug } = Astro.params;
 const projectMap = {
   'multi-agent-ticketing': {
     key: 'project1',
-    technologies: ['Multi-Agent System', 'Context Engineering', 'RPE', 'RAG', 'Human-in-the-Loop', 'Lean Prototyping', 'Streamlit', 'Python']
+    technologies: ['Multi-Agent System', 'Context Engineering', 'RPE', 'RAG', 'Human-in-the-Loop', 'Lean Prototyping', 'Streamlit', 'Python'],
+    demoUrl: 'https://multi-agent-ticket-assistant-rb9rmdpsbp4tvnmvrgxr6j.streamlit.app/',
+    githubUrl: 'https://github.com/zer0dude/multi-agent-ticket-assistant',
+    diagramImage: '/assets/RPE_ticket_agent.png'
   },
   'customer-churn-prediction': {
     key: 'project2', 
     technologies: ['Python', 'Scikit-Learn', 'Machine Learning', 'Supervised Learning', 'Unsupervised Learning', 'Model Explainability', 'Streamlit']
   },
-  'computer-vision-identifier': {
+  'ai-video-face-search': {
     key: 'project3',
-    technologies: ['Computer Vision', 'Classification', 'YOLO', 'Pipelines']
+    technologies: ['Computer Vision', 'Machine Learning', 'Facenet', 'Streamlit', 'Python', 'Prototyping'],
+    demoUrl: 'https://video-face-search-wxubbcrf3tufe2xczy6zlb.streamlit.app/',
+    githubUrl: 'https://github.com/zer0dude/video-face-search',
+    diagramImage: '/assets/face_identifier_screenshot.png'
   }
 };
 
@@ -60,7 +66,7 @@ const projectKey = `portfolio.${project.key}`;
           <h1>{t(`${projectKey}.title`)}</h1>
           <p class="project-desc subtitle">{t(`${projectKey}.description`)}</p>
           
-          {slug === 'multi-agent-ticketing' ? (
+          {['multi-agent-ticketing', 'ai-video-face-search'].includes(slug) ? (
             <div class="project-details">
               <!-- Technologies -->
               <div class="project-section">
@@ -90,7 +96,7 @@ const projectKey = `portfolio.${project.key}`;
                   <div class="mini-label-white">{t(`${projectKey}.demoTitle`)}</div>
                   <p class="project-desc">{t(`${projectKey}.demoDescription`)}</p>
                   <div style="margin-top: 1rem;">
-                    <a href="https://multi-agent-ticket-assistant-rb9rmdpsbp4tvnmvrgxr6j.streamlit.app/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #ff6b6b; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; margin-right: 1rem; transition: background 0.3s;">
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #ff6b6b; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; margin-right: 1rem; transition: background 0.3s;">
                       🚀 Live Demo
                     </a>
                   </div>
@@ -100,7 +106,7 @@ const projectKey = `portfolio.${project.key}`;
                   <div class="mini-label-white">{t(`${projectKey}.githubTitle`)}</div>
                   <p class="project-desc">{t(`${projectKey}.githubDescription`)}</p>
                   <div style="margin-top: 1rem;">
-                    <a href="https://github.com/zer0dude/multi-agent-ticket-assistant" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #333; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; transition: background 0.3s;">
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #333; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; transition: background 0.3s;">
                       💻 View Source Code
                     </a>
                   </div>
@@ -111,16 +117,20 @@ const projectKey = `portfolio.${project.key}`;
               <div class="project-section">
                 <div class="mini-label-white">{t(`${projectKey}.rpeTitle`)}</div>
                 <p class="project-desc">{t(`${projectKey}.rpeDescription`)}</p>
-                <div style="text-align: center; margin: 2rem 0;">
-                  <img src="/assets/RPE_ticket_agent.png" alt="RPE Workflow Architecture" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
-                </div>
+                {project.diagramImage && (
+                  <div style="text-align: center; margin: 2rem 0;">
+                    <img src={project.diagramImage} alt="Workflow Architecture" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
+                  </div>
+                )}
               </div>
               
               <!-- AI Agent Architecture -->
-              <div class="project-section">
-                <div class="mini-label-white">AI Agent Architecture</div>
-                <p class="project-desc">{t(`${projectKey}.agentArchitecture`)}</p>
-              </div>
+              {slug === 'multi-agent-ticketing' && (
+                <div class="project-section">
+                  <div class="mini-label-white">AI Agent Architecture</div>
+                  <p class="project-desc">{t(`${projectKey}.agentArchitecture`)}</p>
+                </div>
+              )}
               
               <!-- Technical Approach -->
               <div class="project-section">
